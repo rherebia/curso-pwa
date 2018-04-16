@@ -1,4 +1,4 @@
-let versao = 4;
+let versao = 6;
 
 let arquivos = [
     "/",
@@ -35,8 +35,6 @@ let arquivos = [
 ]
 
 self.addEventListener("activate", function() {
-    console.log("Instalou")
-
     caches.open("ceep-arquivos-" + versao).then(cache => {
         cache.addAll(arquivos).then(function() {
             caches.delete("ceep-arquivos-" + (versao - 1))
