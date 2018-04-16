@@ -63,9 +63,7 @@ const Mural = (function(_render, Filtro){
             preparaCartao(cartao)
 
             let listaImagens = Cartao.pegaImagens(cartao)
-            caches.open("ceep-imagens").then(cache => {
-                cache.matchAll(listaImagens)
-            })
+            
             render()
             return true
         } else {
